@@ -209,7 +209,7 @@ module CalendarDateSelect::FormHelpers
         out << content_tag(:span, nil, :style => "display: none; position: absolute;", :id => uniq_id)
         out << javascript_tag("new CalendarDateSelect( $('#{uniq_id}').previous(), #{options_for_javascript(javascript_options)} ); ")
       else
-        out << "&nbsp;"
+        out << "&nbsp;".html_safe
         out << image_tag(image,
             :onclick => "new CalendarDateSelect( $(this).previous(), #{options_for_javascript(javascript_options)} );",
             :style => 'border:0px; cursor:pointer;',
